@@ -95,3 +95,30 @@ const questions = async () => {
             newStaffInfo.push(newIntern);
     }
 };
+
+async function initQuestions() {
+    await questions()
+
+    const addStaffMember = await inquirer
+        .prompt ([
+            {
+                type:'list',
+                message:'Would you like to add a new staff member or generate your team?',
+                choices: ['Add a new staff member', 'Generate team'],
+                name: 'addStaff'
+            }
+        ])
+        if (addStaffMember.addStaff === 'Add a new staff member') {
+            return initQuestions()
+        }
+        return generateTeam();
+}
+initQuestions();
+
+let generateTeam = () => {
+    fs.writeFileSync(
+        './dist/staff.html',
+        generateStaff(newStaffInfo),
+        'utf-8'
+        );
+}
