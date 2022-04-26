@@ -1,0 +1,30 @@
+.heading {
+    background-color: red;
+    color: whitesmoke;
+}
+
+.team-cards {
+    max-width: 25rem;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+.employeeCard {
+    margin: 1em;
+    max-width: 18rem;
+    min-height: 22rem;
+    width: 90%;
+    border: none;
+    background-color: blue;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 2px 2px 6px rgba(41, 40, 40, 0.7);
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #dbdee1;
+}
