@@ -1,2 +1,0 @@
-# teamprofileGenerator
-Testing hw
